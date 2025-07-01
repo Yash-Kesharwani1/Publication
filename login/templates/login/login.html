@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static "registration.css" %}">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <!-- Registration -->
+          <div class="container-fluid" style="margin-top: 50px">
+            <div class="row">
+              <div class="col-12 fs-4" style="text-align: center">
+                <p style="color: #f64a00; font-weight: 500;">
+                  LOGIN
+                </p>
+              </div>
+              <div class="col-12">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-5 col-lg-5 col-xl-5">
+                      <img src={% static 'req.jpg' %} height="400px"
+                      width="100%" style="margin-top: 20px" />
+                    </div>
+                    <div
+                      class="col-md-7 col-lg-7 col-xl-7"
+                      style="line-height: 1"
+                    >
+                      {% comment %} This div contains the username {% endcomment%}
+                      <div class="container-fluid" style="padding-top: 20px">
+                        <div class="row">
+                          <div class="col-12">
+                            <!--  -->
+                            <input
+                              type="email"
+                              placeholder="Email (username in this service)"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {% comment %} This div contains the password of the user{%endcomment %}
+                      <div class="container-fluid" style="padding-top: 20px">
+                        <div class="row">
+                          <div class="col-12">
+                            <!--  -->
+                            <input
+                              type="text"
+                              placeholder="Enter your password"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div><br /><br /></div>
+                      <div>
+                        <button
+                          class="btn btn-success"
+                          style="
+                            width: 90%;
+                            height: 50px;
+                            font-size: 20px;
+                            background-color: rgb(246, 74, 0);
+                            border-radius: 30px;
+                            border: none;
+                          "
+                        >
+                          <span style="color: white; font-weight: bold"
+                            >LOGIN</span
+                          >
+                        </button>
+                      </div>
+
+                      <div>
+                        <p>Don't have account?</p>
+                        <p>First register yourself.</p>
+                      </div>
+
+                      <div><br /><br /></div>
+                      <div>
+                        <button
+                          class="btn btn-success"
+                          style="
+                            width: 90%;
+                            height: 50px;
+                            font-size: 20px;
+                            background-color: rgba(246, 74, 0, 0.1);
+                            border-radius: 30px;
+                            border: none;
+                            margin-left: 20px;
+                          "
+                        >
+                          <span style="color: rgb(256, 74, 0); font-weight: bold">REGISTER</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
