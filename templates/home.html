@@ -1,274 +1,60 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'home.css'%}" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <p>Hello World!</p>
-    <div class="container-fluid"  style="position: fixed; top: 0; width: 100%; z-index: 1000;">
-      <div class="row fw-500 fs-5 text-light p-3" style="background-color: rgb(246, 74, 0)">
-        <div class="col-2 bg-danger"></div>
-        <div class="col-8">
-          <div class="container-fluid">
-            <div class="row" style="text-align: center">
-              <div class="col-2"></div>
-              <div class="col-2">
-                <p>HOME</p>
-              </div>
-              <div class="col-2">
-                <p>FEATURES</p>
-              </div>
-              <div class="col-2">
-                <p>PRICING</p>
-              </div>
-              <div class="col-2">
-                <p>NEWS</p>
-              </div>
-              <div class="col-2">
-                <p>CONFERENCES</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-1">
-          <p><a href="http://127.0.0.1:8000/login/">LOGIN</a></p>
-        </div>
-        <div class="col-1">
-          <p><a href="http://127.0.0.1:8000/login/registration_page/">REGISTER</a></p>
-        </div>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal Navbar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f5f6fa;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    .container-box {
+      background: #fff;
+      padding: 20px;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .nav-link {
+      color: #174d77;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #4c4cff;
+      text-decoration: underline;
+    }
+    .btn-primary {
+      background-color: #4c4cff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #3b3bd1;
+    }
+  </style>
+</head>
+<body>
 
-    <!-- This Container contains The carousel slide -->
-    <div class="container-fluid" style="float: left; margin-top: 70px">
-      <div class="row">
-        <div class="col-md-12">
-          <!-- From Here Bootstrap Carousel code started -->
-          <div
-            id="carouselExampleSlidesOnly"
-            class="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <!-- This div is for the first image of carousel -->
-              <div class="carousel-item active" style="line-height: 1">
-                <!-- This is the image of carousel -->
-                <img
-                  src="{% static 'sl1.jpg' %}"
-                  class="d-block w-100"
-                  style="width: auto; height: 600px"
-                />
+<div class="container-box">
+  <nav class="nav justify-content-center">
+    <a class="nav-link active" href="#">Home</a>
+    <a class="nav-link" href="#">About</a>
+    <a class="nav-link" href="#">Login</a>
+    <a class="nav-link" href="#">Register</a>
+    <a class="nav-link" href="#">Search</a>
+    <a class="nav-link" href="#">Current</a>
+    <a class="nav-link" href="#">Archives</a>
+    <a class="nav-link" href="#">Announcements</a>
+  </nav>
+</div>
 
-                <!-- This is the contents/text written on the carousel -->
-                <div class="container" style="z-index: -2; margin-top: -450px">
-                  <div class="row">
-                    <!-- Our content comes in six columns only -->
-                    <div class="col-6">
-                      <div>
-                        <p>
-                          <span
-                            style="color: rgb(246, 74, 0); font-weight: bold"
-                          >
-                            WELCOME!
-                          </span>
-                          START GROWING YOUR BUSINESS TODAY
-                        </p>
-                      </div>
-                      <div style="font-size: 75px; font-weight: lighter">
-                        <p>
-                          Launch
-                          <span style="font-weight: 600; color: rgb(246, 74, 0)"
-                            >Ultra Modern</span
-                          >
-                          Effective Business
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          Porttitor ornare fementu aliquam pharetra facilisisi
-                          gravida rissus susscipit
-                        </p>
-
-                        <p>
-                          Dui feugiat fusce conubia ridiculus trisculs
-                          tristicque partituet
-                        </p>
-                      </div>
-                      <div>
-                        <button
-                          class="btn btn-success"
-                          style="
-                            width: 200px;
-                            height: 50px;
-                            font-size: 20px;
-                            background-color: rgb(246, 74, 0);
-                            border-radius: 30px;
-                            border: none;
-                          "
-                        >
-                          <span style="color: white; font-weight: bold"
-                            >Get Consultant</span
-                          >
-                        </button>
-                      </div>
-                      <div><br /><br /><br /><br /></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- This div is for the second image of carousel -->
-              <div class="carousel-item" style="line-height: 1">
-                <img
-                  src="{% static 'sl3.jpg' %}"
-                  class="d-block w-100"
-                  style="width: auto; height: 600px"
-                />
-
-                <!-- This is the contents/text written on the carousel -->
-                <div class="container" style="z-index: -2; margin-top: -450px">
-                  <div class="row">
-                    <!-- Our content comes in six columns only -->
-                    <div class="col-6">
-                      <div>
-                        <p>
-                          <span
-                            style="color: rgb(246, 74, 0); font-weight: bold"
-                          >
-                            WELCOME!
-                          </span>
-                          START GROWING YOUR BUSINESS TODAY
-                        </p>
-                      </div>
-                      <div style="font-size: 75px; font-weight: lighter">
-                        <p>
-                          Launch
-                          <span style="font-weight: 600; color: rgb(246, 74, 0)"
-                            >Ultra Modern</span
-                          >
-                          Effective Business
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          Porttitor ornare fementu aliquam pharetra facilisisi
-                          gravida rissus susscipit
-                        </p>
-
-                        <p>
-                          Dui feugiat fusce conubia ridiculus trisculs
-                          tristicque partituet
-                        </p>
-                      </div>
-                      <div>
-                        <button
-                          class="btn btn-success"
-                          style="
-                            width: 200px;
-                            height: 50px;
-                            font-size: 20px;
-                            background-color: rgb(246, 74, 0);
-                            border-radius: 30px;
-                            border: none;
-                          "
-                        >
-                          <span style="color: white; font-weight: bold"
-                            >Get Consultant</span
-                          >
-                        </button>
-                      </div>
-                      <div><br /><br /><br /><br /></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- This div is for the third image of carousel -->
-              <div class="carousel-item" style="line-height: 1">
-                <img
-                  src="{% static 'sl2.jpg' %}"
-                  class="d-block w-100"
-                  style="width: auto; height: 600px"
-                />
-
-                <!-- This is the contents/text written on the carousel -->
-                <div class="container" style="z-index: -2; margin-top: -450px">
-                  <div class="row">
-                    <!-- Our content comes in six columns only -->
-                    <div class="col-6">
-                      <div>
-                        <p>
-                          <span
-                            style="color: rgb(246, 74, 0); font-weight: bold"
-                          >
-                            WELCOME!
-                          </span>
-                          START GROWING YOUR BUSINESS TODAY
-                        </p>
-                      </div>
-                      <div style="font-size: 75px; font-weight: lighter">
-                        <p>
-                          Launch
-                          <span style="font-weight: 600; color: rgb(246, 74, 0)"
-                            >Ultra Modern</span
-                          >
-                          Effective Business
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          Porttitor ornare fementu aliquam pharetra facilisisi
-                          gravida rissus susscipit
-                        </p>
-
-                        <p>
-                          Dui feugiat fusce conubia ridiculus trisculs
-                          tristicque partituet
-                        </p>
-                      </div>
-                      <div>
-                        <button
-                          class="btn btn-success"
-                          style="
-                            width: 200px;
-                            height: 50px;
-                            font-size: 20px;
-                            background-color: rgb(246, 74, 0);
-                            border-radius: 30px;
-                            border: none;
-                          "
-                        >
-                          <span style="color: white; font-weight: bold"
-                            >Get Consultant</span
-                          >
-                        </button>
-                      </div>
-                      <div><br /><br /><br /><br /></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
