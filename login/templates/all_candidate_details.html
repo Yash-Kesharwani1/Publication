@@ -1,0 +1,50 @@
+<h1>Candidate Details</h1>
+
+<table>
+    <tr>
+        <td>Action</td>
+        <td>SN</td>
+        <td>Username</td>
+        <td>Password</td>
+        <td>Saltuation</td>
+        <td>First Name</td>
+        <td>Middle Name</td>
+        <td>Last Name</td>
+        <td>Initials</td>
+        <td>Gender</td>
+        <td>Affiliation</td>
+        <td>Signature</td>
+        <td>email</td>
+        <td>ORCID</td>
+        <td>Website URL</td>
+        <td>Phone Number</td>
+        <td>Fax Number</td>
+        <td>Mailing Address</td>
+        <td>Country</td>
+        <td>Bio Statement</td>
+    </tr>
+    {% for i in candidates %}
+    <tr>
+        <td><a href="/login/edit_candidate/?id={{i.id}}"><button>Edit</button></a> <a href="/login/delete_candidate/?id={{i.id}}"><button>Delete</button></a></td>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.candidate_username}}</td>
+        <td>{{i.candidate_password}}</td>
+        <td>{{i.candidate_saltuation}}</td>
+        <td>{{i.candidate_first_name}}</td>
+        <td>{{i.candidate_middle_name}}</td>
+        <td>{{i.candidate_last_name}}</td>
+        <td>{{i.candidate_initials}}</td>
+        <td>{{i.candidate_gender}}</td>
+        <td>{{i.candidate_affiliation}}</td>
+        <td>{{i.candidate_signature}}</td>
+        <td>{{i.candidate_email}}</td>
+        <td>{{i.candidate_orcid_id}}</td>
+        <td>{{i.candidate_website_url}}</td>
+        <td>{{i.candidate_phone_number}}</td>
+        <td>{{i.candidate_fax_number}}</td>
+        <td>{{i.candidate_mailing_address}}</td>
+        <td>{{i.candidate_country}}</td>
+        <td>{{i.candidate_bio_statement}}</td>
+    </tr>
+    {% endfor %}
+</table>

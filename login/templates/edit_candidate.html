@@ -38,8 +38,9 @@
 
       {% comment %} From here form is starts {% endcomment %} {% comment %}
       action = '/save_candidate/' {% endcomment %}
-      <form action="/login/save_candidate/" method="post">
+      <form action="/login/save_edited_candidate/" method="post">
         {% csrf_token %}
+        <input type="hidden" name="id" value="{{candidate.id}}">
         <div class="row mb-3">
           <div class="col-md-6">
             <label class="form-label required">Username</label>
@@ -48,6 +49,7 @@
               class="form-control"
               placeholder="Username"
               name="candidate_username"
+              value="{{candidate.candidate_username}}"
               required
             />
             <div class="form-text">
@@ -63,6 +65,7 @@
               class="form-control"
               placeholder="Password"
               name="candidate_password"
+              value="{{candidate.candidate_password}}"
               required
             />
             <div class="form-text">At least 6 characters.</div>
@@ -76,6 +79,7 @@
             class="form-control"
             placeholder="Repeat Password"
             name="candidate_confirm_password"
+            value="{{candidate.candidate_password}}"
             required
           />
         </div>
@@ -88,6 +92,7 @@
               class="form-control"
               placeholder="e.g., Mr., Ms., Dr."
               name="candidate_saltuation"
+              value="{{candidate.candidate_saltuation}}"
             />
           </div>
           <div class="col-md-4">
@@ -97,6 +102,7 @@
               class="form-control"
               placeholder="First Name"
               name="candidate_first_name"
+              value="{{candidate.candidate_first_name}}"
               required
             />
           </div>
@@ -107,6 +113,7 @@
               class="form-control"
               placeholder="Middle Name"
               name="candidate_middle_name"
+              value="{{candidate.candidate_middle_name}}"
             />
           </div>
         </div>
@@ -119,6 +126,7 @@
               class="form-control"
               placeholder="Last Name"
               name="candidate_last_name"
+              value="{{candidate.candidate_last_name}}"
               required
             />
           </div>
@@ -129,12 +137,13 @@
               class="form-control"
               placeholder="e.g., JAS"
               name="candidate_initials"
+              value="{{candidate.candidate_initials}}"
             />
             <div class="form-text">Example: Joan Alice Smith = JAS</div>
           </div>
           <div class="col-md-4">
             <label class="form-label">Gender</label>
-            <select class="form-select" name="candidate_gender">
+            <select class="form-select" name="candidate_gender" value="{{candidate.candidate_gender}}">
               <option selected disabled>Select Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -150,6 +159,7 @@
             class="form-control"
             placeholder="Your institution, e.g., Simon Fraser University"
             name="candidate_affiliation"
+            value="{{candidate.candidate_affiliation}}"
           />
         </div>
 
@@ -160,6 +170,7 @@
             rows="2"
             placeholder="Your signature"
             name="candidate_signature"
+            value="{{candidate.candidate_signature}}"
           ></textarea>
         </div>
 
@@ -171,6 +182,7 @@
               class="form-control"
               placeholder="Email"
               name="candidate_email"
+              value="{{candidate.candidate_email}}"
               required
             />
             <div class="form-text">We respect your privacy.</div>
@@ -182,6 +194,7 @@
               class="form-control"
               placeholder="Confirm Email"
               name="candidate_confirm_email"
+              value="{{candidate.candidate_email}}"
               required
             />
           </div>
@@ -194,6 +207,7 @@
             class="form-control"
             placeholder="http://orcid.org/0000-0002-1825-0097"
             name="candidate_orcid_id"
+            value="{{candidate.candidate_orcid_id}}"
           />
           <div class="form-text">
             ORCID iDs must follow proper format with full URI.
@@ -208,6 +222,7 @@
               class="form-control"
               placeholder="Website URL"
               name="candidate_website_url"
+              value="{{candidate.candidate_website_url}}"
             />
           </div>
           <div class="col-md-6">
@@ -217,6 +232,7 @@
               class="form-control"
               placeholder="Phone Number"
               name="candidate_phone_number"
+              value="{{candidate.candidate_phone_number}}"
             />
           </div>
         </div>
@@ -229,6 +245,7 @@
               class="form-control"
               placeholder="Fax Number"
               name="candidate_fax_number"
+              value="{{candidate.candidate_fax_number}}"
             />
           </div>
           <div class="col-md-6">
@@ -238,13 +255,14 @@
               class="form-control"
               placeholder="Mailing Address"
               name="candidate_mailing_address"
+              value="{{candidate.candidate_mailing_address}}"
             />
           </div>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Country</label>
-          <select class="form-select" name="candidate_country">
+          <select class="form-select" name="candidate_country" value="{{candidate.candidate_country}}">
             <option selected disabled>Select Country</option>
             <option value="India">India</option>
 
@@ -460,6 +478,7 @@
             rows="2"
             placeholder="E.g., department and rank"
             name="candidate_bio_statement"
+            value="{{candidate.candidate_bio_statement}}"
           ></textarea>
         </div>
 
@@ -503,7 +522,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">Register</button>
+        <button type="submit" class="btn btn-primary w-100">Update Candidate Details</button>
       </form>
     </div>
 
