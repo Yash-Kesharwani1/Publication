@@ -1,3 +1,5 @@
+from weakref import ref
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
@@ -30,6 +32,37 @@ def save_candidate(request):
         candidate_mailing_address = request.POST['candidate_mailing_address'],
         candidate_country = request.POST['candidate_country'],
         candidate_bio_statement = request.POST['candidate_bio_statement']
+    )
+    subject = "Welcome to Medha Arise"
+    message = f"""
+    Hi {request.POST['candidate_first_name']},
+    Thank you for registering with Medha Arise! We're excited to have you on board.
+
+
+    Here are your login details:
+    Username : {request.POST['candidate_username']}    
+    Password : {request.POST['candidate_password']}
+
+
+    You can now log in and start exploring: "loginlink"
+
+
+    Pleas keep your login credentials secure. We recommend changing your password after your first login for added security.
+
+    If you have any questions or need help, feel free to reach out to our support team.
+
+    Thanks again,
+    The Medha Arise Team
+    support@mg.com
+    """
+    recipient_list = [request.POST['candidate_email'],'tiwarialok.2302@gmail.com']
+    
+    send_mail(
+        subject=subject,
+        message=message,
+        from_email=None,
+        recipient_list=recipient_list,
+        fail_silently=False,
     )
     candidate.save()
     return HttpResponse("User Registered Successfully")
@@ -74,7 +107,10 @@ def save_edited_candidate(request):
     candidate.candidate_mailing_address = request.POST['candidate_mailing_address']
     candidate.candidate_country = request.POST['candidate_country']
     candidate.candidate_bio_statement = request.POST['candidate_bio_statement']
+    
     candidate.save()
+
+    
     return redirect('/login/all_candidate_details/')
 
 def delete_candidate(request):
